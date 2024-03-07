@@ -243,11 +243,44 @@ CSS when certain conditions that we declare are met - such as a certain viewport
 width, etc. */
 
 /* Media Query Tablet */
-/* --- */
-/* Replace this comment with your media query. */
-/* --- */
+@media screen and (min-width: 900px) {
+  .card-section {
+    flex-direction: row; /* Change to row for two columns */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    padding: 5%;
+  }
+
+  /* Set the width of each card to 50% of the container minus the gap */
+  .product-card,
+  .intro-text {
+    width: calc(50% - var(--gap));
+  }
+}
 
 /* Media Query Desktop */
-/* --- */
-/* Replace this comment with your media query. */
-/* --- */
+@media screen and (min-width: 1536px) {
+  .card-section {
+    flex-direction: row; /* Change to row for two columns */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    align-items: flex-start; /* Align items to the top */
+    padding: 5%;
+  }
+
+  /* Set the width of each card to 50% of the container minus the gap */
+  .product-card,
+  .intro-text {
+    width: calc(50% - var(--gap));
+  }
+
+  .product-card:first-child {
+    width: 100%; /* Set the width of the first card to 100% */
+  }
+
+  .product-card:last-child {
+    margin-left: auto; /* Push the last card to the right */
+    margin-right: auto; /* Push the last card to the left, effectively centering it */
+    width: 50%; /* Set width to auto to allow it to center */
+  }
+}
