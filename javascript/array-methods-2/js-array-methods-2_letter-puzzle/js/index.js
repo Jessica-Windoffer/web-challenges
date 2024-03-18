@@ -29,7 +29,7 @@ console.log(employeeYoungerThan18);
 // Hint: use every()
 
 const everyEmployeeHasPhoneNumber = employees.every(
-  (employee) => employee.phone !== undefined && employee.phone !== null
+  (employee) => employee.phone.length > 0
 );
 console.log(everyEmployeeHasPhoneNumber);
 
@@ -46,37 +46,60 @@ console.log(everyIdStartsWith0);
 // QUESTION 6: Has every employee a first name AND a last name?
 // Hint: use every()
 
-const everyEmployeeHasFirstAndLastName = null;
+const everyEmployeeHasFirstAndLastName = employees.every(
+  (employee) => employee.firstName.length > 0 && employee.lastName.length > 0
+);
+console.log(everyEmployeeHasFirstAndLastName);
 
 //----------------------------------------
 // QUESTION 7: Can you find the employee named 'Louise' that is 33 years old?
 // Hint: use find()
 
-const employeeLouise33 = null;
+const employeeLouise33 = employees.find(
+  (employee) => employee.firstName === "Louise" && employee.age === 33
+);
+console.log(employeeLouise33);
 
 //----------------------------------------
 // QUESTION 8: We need to find the employee with the id '0.0795620650485831'
 // Hint: Use find()
 
-const employeeWithId = null;
+const employeeWithId = employees.find(
+  (employee) => employee.id === "0.0795620650485831"
+);
+console.log(employeeWithId);
 
 //----------------------------------------
-// QUESTION 9: Please find the employee with first name 'Edna' and profession 'Inverstment Manager'
+// QUESTION 9: Please find the employee with first name 'Edna' and profession 'Investment Manager'
 // Hint: use find()
 
-const ednaInvestment = null;
+const ednaInvestment = employees.find(
+  (employee) =>
+    employee.firstName === "Edna" &&
+    employee.profession === "Investment Manager"
+);
+console.log(ednaInvestment);
 
 //----------------------------------------
 // QUESTION 10: We need a new employees array now sorted by age ascending (1 -> 100)
 // Hint: Use toSorted()
 
-const employeesSortedByAge = null;
+const employeesSortedByAge = employees.slice().sort((a, b) => a.age - b.age);
+
+console.log(employeesSortedByAge);
 
 //----------------------------------------
 // QUESTION 11: We want a new employees array sorted by last name descending (Z -> A)
 // Hint use toSorted()
 
-const employeesSortedByLastName = null;
+const employeesSortedByLastName = employees.sort((a, b) => {
+  const nameA = a.lastName.toLowerCase();
+  const nameB = b.lastName.toLowerCase();
+  if (nameA < nameB) return 1;
+  if (nameA > nameB) return -1;
+  return 0;
+});
+console.log(employeesSortedByLastName);
 
 // Great! 🎉 You got it! 🚀 Now you can read the solution of the letter puzzle. 💪
 
