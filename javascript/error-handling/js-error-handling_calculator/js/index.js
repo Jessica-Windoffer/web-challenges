@@ -26,6 +26,7 @@ form.addEventListener("submit", (event) => {
     const result = operations[operation](firstNumber, secondNumber);
     output.innerText = result;
     console.log(`${firstNumber} ${operation} ${secondNumber} equals ${result}`);
+    errorPaasage.innerText = "";
   } catch (error) {
     output.innerText = ""; // Clear output in case of error
     console.error("An error occurred:", error.message);
