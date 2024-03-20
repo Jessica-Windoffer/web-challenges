@@ -30,6 +30,7 @@ form.addEventListener("submit", (event) => {
   } catch (error) {
     output.innerText = ""; // Clear output in case of error
     console.error("An error occurred:", error.message);
+    alert("Error: " + error.message); // Display an alert with the error message
     errorPaasage.innerText = "Error: " + error.message;
   }
 });
