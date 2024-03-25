@@ -7,7 +7,7 @@ export default function App() {
 
 function Article() {
   return (
-    <article>
+    <article className="article">
       <h2 className="article__title">This is a Headline for the article!</h2>
       <label htmlFor="inputField">Put your input into the text field:</label>
       <input id="inputField"></input>
