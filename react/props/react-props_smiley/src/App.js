@@ -15,5 +15,5 @@ export default function App() {
 function Smiley(props) {
   // if the incoming parameter is happy, then (?) render ":-)",
   // otherwise (:) render the given ":-(".
-  return <div>{props.isHappy === true ? ":-)" : ":-("}</div>;
+  return <div>{props.isHappy === true ? "😊" : "🙁"}</div>;
 }
