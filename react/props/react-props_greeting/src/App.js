@@ -14,6 +14,6 @@ export default function App() {
 
 function Greeting({ name }) {
   // if { name } is Feline, then (?) render "Coach",
-  // otherwise (:) render the given name”.
+  // otherwise (:) render the given name.
   return <div>Hello, {name === "Feline" ? "Coach" : name}!</div>;
 }
