@@ -17,6 +17,7 @@ export default function App() {
 
   return (
     <div className="container">
+      <span>{code}</span>
       <div className="button-container">
         <button type="button" onClick={handleClick}>
           <span role="img" aria-label="Pufferfish">
