@@ -13,8 +13,8 @@ export default function Volumes() {
       </Head>
       <h1>List of Volumes</h1>
       <ul>
-        {volumes.map(({ id, slug, title }) => (
-          <li key={id}>
+        {volumes.map(({ slug, title }) => (
+          <li key={slug}>
             <Link href={`/volumes/${slug}`}>{title}</Link>
           </li>
         ))}
