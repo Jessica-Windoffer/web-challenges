@@ -1,24 +1,35 @@
 import Link from "next/link";
-import Head from "next/head";
+import styled from "styled-components";
+import { cities } from "@/lib/data";
+import { useRouter } from "next/router";
 
-export default function CityDetail() {
+const StyledHeading = styled.h1`
+  text-align: center;
+`;
+
+export default function City() {
+  const router = useRouter();
+
+  if (!router.query) {
+    return null;
+  }
+
+  const { slug } = router.query;
+
+  const city = cities.find((city) => city.slug === slug);
+
+  if (!city) {
+    return null;
+  }
+
   return (
-    // <>
-    //   <Link href="/cities">← Back to all cities</Link>
-    //   <h1>City!!</h1>
-    // </>
-
-        
-    <Head>
-        <title>List of Volumes</title>
-      </Head>
-
-      <ul>
-        {volumes.map(({ slug, title }) => (
-          <li key={slug}>
-            <Link href={`/volumes/${slug}`}>{title}</Link>
-          </li>
-        ))}
-      </ul>
+    <div>
+      <StyledHeading>{city.name}</StyledHeading>
+      <Link href="/cities">← Back to list of all cities</Link>
+      <p>City name: {city.name}</p>
+      <p>Country: {city.country}</p>
+      <p>Population: {city.population}</p>
+      <p>Description: {city.description}</p>
+    </div>
   );
 }
